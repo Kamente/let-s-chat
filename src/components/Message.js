@@ -1,6 +1,5 @@
-// Message.js
 import React from 'react';
-import './Message.css'; // Create this CSS file for styling
+import './Message.css'; 
 
 const Message = ({ content, type, timestamp }) => {
   return (

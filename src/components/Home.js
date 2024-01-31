@@ -1,16 +1,35 @@
-// Home.js
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.css';
 import Message from './Message';
+import MessageInput from './MessageInput';
 
 const Home = () => {
+  const [messages, setMessages] = useState([]);
+
+  const handleSend = (content) => {
+    const newMessage = {
+      content,
+      type: 'sent',
+      timestamp: getCurrentTimestamp(),
+    };
+    setMessages([...messages, newMessage]);
+  };
+
+  const getCurrentTimestamp = () => {
+    const now = new Date();
+    return `${now.getHours()}:${now.getMinutes()}`;
+  };
+
   return (
-    <div className='home-display'>
+    <div className="home-display">
       <h2>Welcome to the Chat App</h2>
       <div className="chat-container">
-        <Message content="Sent message goes here" type="sent" timestamp="12:34 PM" />
-        <Message content="Received message goes here" type="received" timestamp="12:35 PM" />
-        {/* Add more messages as needed */}
+        <div className="messages-received">
+          {messages.map((msg, index) => (
+            <Message key={index} {...msg} />
+          ))}
+        </div>
+        <MessageInput onSend={handleSend} />
       </div>
     </div>
   );
