@@ -1,10 +1,11 @@
-import React from 'react';
+import React from "react";
+import "./About.css"
 
 const About = () => {
   return (
-    <div>
-      <h2>About Us</h2>
-      <p>This is the about page.</p>
+    <div className="about">
+      <h1>This is the header for the About</h1>
+      <p>idk why it is not displaying though.. arghh</p>
     </div>
   );
 };
