@@ -6,7 +6,7 @@ const MessageInput = ({ onSend }) => {
 
   const handleSend = async () => {
     if (message.trim() !== '') {
-      const twilioClient = new Twilio('ACaf25615623d8b920e25f0aecc5c60237', '4eebe8ae613431dca7fa6ca1e582babe');
+      const twilioClient = new Twilio('', '');
       await twilioClient.messages.create({
         body: message,
         from: '+19045132921',
