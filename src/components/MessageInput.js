@@ -28,6 +28,7 @@ const MessageInput = ({ onSend }) => {
       />
       <button onClick={handleSend}>Send</button>
     </div>
+    
   );
 };
 
