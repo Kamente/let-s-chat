@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import Twilio from 'twilio';
+// import Twilio from 'twilio';
 
 const MessageInput = ({ onSend }) => {
   const [message, setMessage] = useState('');
 
   const handleSend = async () => {
     if (message.trim() !== '') {
-      const twilioClient = new Twilio('', '');
-      await twilioClient.messages.create({
-        body: message,
-        from: '+19045132921',
-        to: '+254704022354',
-      });
+      // const twilioClient = new Twilio('', '');
+      // await twilioClient.messages.create({
+      //   body: message,
+      //   from: '+19045132921',
+      //   to: '+254704022354',
+      // });
 
       onSend(message);
       setMessage('');
